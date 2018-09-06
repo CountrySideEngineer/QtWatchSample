@@ -2,6 +2,7 @@
 #define QTWATCHSAMPLEWINDOW_H
 
 #include <QMainWindow>
+#include "model/cdatetime.h"
 
 namespace Ui {
 class QtWatchSampleWindow;
@@ -15,8 +16,13 @@ public:
     explicit QtWatchSampleWindow(QWidget *parent = nullptr);
     ~QtWatchSampleWindow();
 
+protected:
+    void updateViews();
+
 private:
     Ui::QtWatchSampleWindow *ui;
+
+    CDateTime *mDateTime;
 };
 
 #endif // QTWATCHSAMPLEWINDOW_H

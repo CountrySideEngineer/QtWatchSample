@@ -24,10 +24,16 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        qtwatchsamplewindow.cpp
+        qtwatchsamplewindow.cpp \
+    model/cdatetime.cpp \
+    model/ibuilder.cpp \
+    model/cdatetimebuilder.cpp
 
 HEADERS += \
-        qtwatchsamplewindow.h
+        qtwatchsamplewindow.h \
+    model/cdatetime.h \
+    model/ibuilder.h \
+    model/cdatetimebuilder.h
 
 FORMS += \
         qtwatchsamplewindow.ui
