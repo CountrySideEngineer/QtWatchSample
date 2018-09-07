@@ -27,13 +27,15 @@ SOURCES += \
         qtwatchsamplewindow.cpp \
     model/cdatetime.cpp \
     model/ibuilder.cpp \
-    model/cdatetimebuilder.cpp
+    model/cdatetimebuilder.cpp \
+    model/cdatetimedirector.cpp
 
 HEADERS += \
         qtwatchsamplewindow.h \
     model/cdatetime.h \
     model/ibuilder.h \
-    model/cdatetimebuilder.h
+    model/cdatetimebuilder.h \
+    model/cdatetimedirector.h
 
 FORMS += \
         qtwatchsamplewindow.ui

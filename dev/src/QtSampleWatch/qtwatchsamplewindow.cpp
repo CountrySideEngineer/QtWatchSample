@@ -2,6 +2,7 @@
 #include "ui_qtwatchsamplewindow.h"
 #include "model/cdatetimebuilder.h"
 #include "model/cdatetime.h"
+#include "model/cdatetimedirector.h"
 
 QtWatchSampleWindow::QtWatchSampleWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -28,7 +29,10 @@ QtWatchSampleWindow::~QtWatchSampleWindow()
 
 void QtWatchSampleWindow::updateViews()
 {
-    this->ui->timeLabel->setText(this->mDateTime->getTime());
-    this->ui->dateLabel->setText(
-                this->mDateTime->getDate() + " (" + this->mDateTime->getWeekDay() + ")");
+    CDateTimeBuilder builder(this->mDateTime);
+    CDateTimeDirector director(&builder);
+    director.construct();
+
+    this->ui->timeLabel->setText(builder.getTime());
+    this->ui->dateLabel->setText(builder.getDate());
 }
