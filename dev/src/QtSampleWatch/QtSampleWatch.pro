@@ -28,14 +28,24 @@ SOURCES += \
     model/cdatetime.cpp \
     model/ibuilder.cpp \
     model/cdatetimebuilder.cpp \
-    model/cdatetimedirector.cpp
+    model/cdatetimedirector.cpp \
+    cconfigmanager.cpp \
+    model/cdatetimebuilderlonglong.cpp \
+    model/cdatetimebuilderlongshort.cpp \
+    model/cdatetimebuildershortlong.cpp \
+    model/cdatetimebuildershortshort.cpp
 
 HEADERS += \
         qtwatchsamplewindow.h \
     model/cdatetime.h \
     model/ibuilder.h \
     model/cdatetimebuilder.h \
-    model/cdatetimedirector.h
+    model/cdatetimedirector.h \
+    cconfigmanager.h \
+    model/cdatetimebuilderlonglong.h \
+    model/cdatetimebuilderlongshort.h \
+    model/cdatetimebuildershortlong.h \
+    model/cdatetimebuildershortshort.h
 
 FORMS += \
         qtwatchsamplewindow.ui
