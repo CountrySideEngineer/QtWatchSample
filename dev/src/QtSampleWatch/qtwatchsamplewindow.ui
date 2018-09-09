@@ -20,7 +20,30 @@
       <property name="verticalSpacing">
        <number>0</number>
       </property>
-      <item row="0" column="0">
+      <item row="3" column="1">
+       <widget class="QGroupBox" name="groupBox">
+        <property name="title">
+         <string>Time display config</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QRadioButton" name="timeDisplayLongFormat">
+           <property name="text">
+            <string>HH:MM</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="timeDisplayShortFormat">
+           <property name="text">
+            <string>H:M</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="2">
        <widget class="QLabel" name="timeLabel">
         <property name="font">
          <font>
@@ -35,7 +58,30 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
+      <item row="3" column="0">
+       <widget class="QGroupBox" name="dateDisplayGroup">
+        <property name="title">
+         <string>Date display config</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QRadioButton" name="dateDisplayLongFormat">
+           <property name="text">
+            <string>MM/DD（WWW)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="dateDisplayShortFormat">
+           <property name="text">
+            <string>M/D（W)</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
        <widget class="QWidget" name="widget" native="true">
         <property name="maximumSize">
          <size>
