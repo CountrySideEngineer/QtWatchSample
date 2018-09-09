@@ -1,8 +1,8 @@
 #ifndef CCONFIGMANAGER_H
 #define CCONFIGMANAGER_H
 
+#include "model/cdatetime.h"
 #include "model/cdatetimebuilder.h"
-
 
 class CConfigManager
 {
@@ -27,10 +27,9 @@ public:
     virtual void updateDateDisplayConfig(DATE_DISPLAY_CONFIG config)
     { this->mDateDisplayConfig = config;  }
 
-    virtual CDateTimeBuilder* getDateTimeBuilder() const { return this->mDateTimeBuilder; }
+    virtual const CDateTimeBuilder* createDateTimeBuilder(CDateTime* dateTime);
 
 protected:
-    virtual void updateDisplayConfig();
 
 protected:
     DATE_DISPLAY_CONFIG mDateDisplayConfig;

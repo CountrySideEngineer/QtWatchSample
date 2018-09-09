@@ -3,7 +3,11 @@
 #include "model/cdatetime.h"
 #include "model/cdatetimebuilder.h"
 
-class CDateTimeBuilderLongLong : CDateTimeBuilder
+/**
+ * @brief   Time format - hh:mm ->  LONG FORMAT
+ *          Date format - MM/dd ->  LONG FORMAT
+ */
+class CDateTimeBuilderLongLong : public CDateTimeBuilder
 {
 public:
     CDateTimeBuilderLongLong(CDateTime* dateTime);
