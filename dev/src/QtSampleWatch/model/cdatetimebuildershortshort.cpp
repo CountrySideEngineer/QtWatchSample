@@ -3,7 +3,7 @@
 CDateTimeBuilderShortShort::CDateTimeBuilderShortShort(CDateTime* dateTime)
     : CDateTimeBuilder(dateTime)
 {
-
+    this->setupFormat();
 }
 
 void CDateTimeBuilderShortShort::setupFormat()

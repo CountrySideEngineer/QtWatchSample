@@ -5,7 +5,7 @@
 
 /**
  * @brief   Time format - hh:mm ->  LONG FORMAT
- *          Date format - MM/dd ->  SHORT FORMAT
+ *          Date format - M/d ->  SHORT FORMAT
  */
 class CDateTimeBuilderLongShort : public CDateTimeBuilder
 {
