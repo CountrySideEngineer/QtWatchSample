@@ -31,6 +31,12 @@
            <property name="text">
             <string>HH:MM</string>
            </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">timeDisplayConfigGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
@@ -38,6 +44,9 @@
            <property name="text">
             <string>H:M</string>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">timeDisplayConfigGroup</string>
+           </attribute>
           </widget>
          </item>
         </layout>
@@ -69,6 +78,12 @@
            <property name="text">
             <string>MM/DD（WWW)</string>
            </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">dateDisplayConfigGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
@@ -76,6 +91,9 @@
            <property name="text">
             <string>M/D（W)</string>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">dateDisplayConfigGroup</string>
+           </attribute>
           </widget>
          </item>
         </layout>
@@ -175,4 +193,8 @@
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="dateDisplayConfigGroup"/>
+  <buttongroup name="timeDisplayConfigGroup"/>
+ </buttongroups>
 </ui>
