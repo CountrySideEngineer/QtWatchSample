@@ -8,10 +8,15 @@
 
 QtWatchSampleWindow::QtWatchSampleWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::QtWatchSampleWindow)
+    ui(new Ui::QtWatchSampleWindow),
+    mTimer(new QTimer(this))
 {
     ui->setupUi(this);
 
+    this->mTimer->setInterval(100);
+    this->mTimer->setSingleShot(false);
+
+    connect(this->mTimer, SIGNAL(timeout()), this, SLOT(onTimerDispatch()));
     connect(this->ui->dateDisplayConfigGroup, SIGNAL(buttonClicked(int)),
             this, SLOT(onDateDisplayConfigGroupClicked(int)));
     connect(this->ui->timeDisplayConfigGroup, SIGNAL(buttonClicked(int)),
@@ -28,6 +33,8 @@ QtWatchSampleWindow::QtWatchSampleWindow(QWidget *parent) :
             CConfigManager::TIME_DISPLAY_CONFIG::TIME_DISPLAY_CONFIG_LONG;
     this->mTimeMap[tr("timeDisplayShortFormat")] =
             CConfigManager::TIME_DISPLAY_CONFIG::TIME_DISPLAY_CONFIG_SHORT;
+
+    this->mTimer->start();
 
     this->updateDateDisplayConfig();
     this->updateTimeDisplayConfig();
@@ -46,8 +53,8 @@ QtWatchSampleWindow::~QtWatchSampleWindow()
 
 void QtWatchSampleWindow::updateViews()
 {
-    const CDateTimeBuilder* builder = this->mConfigManager->createDateTimeBuilder(this->mDateTime);
-    CDateTimeDirector director((CDateTimeBuilder*)(builder));
+    CDateTimeBuilder* builder = (CDateTimeBuilder*)(this->mConfigManager->createDateTimeBuilder(this->mDateTime));
+    CDateTimeDirector director(builder);
     director.construct();
 
     this->ui->timeLabel->setText(builder->getTime());
@@ -98,5 +105,10 @@ void QtWatchSampleWindow::updateTimeDisplayConfig(QString objectName)
     }
 }
 
+void QtWatchSampleWindow::onTimerDispatch()
+{
+    this->updateDateDisplayConfig();
+    this->updateTimeDisplayConfig();
+}
 
 
