@@ -1,4 +1,5 @@
 ﻿#include <QtDebug>
+#include <QFile>
 #include "qtwatchsamplewindow.h"
 #include "ui_qtwatchsamplewindow.h"
 #include "model/cdatetimebuilder.h"
@@ -38,6 +39,12 @@ QtWatchSampleWindow::QtWatchSampleWindow(QWidget *parent) :
 
     this->updateDateDisplayConfig();
     this->updateTimeDisplayConfig();
+
+    QFile styleSheetFile(":/qss/style.qss");
+    styleSheetFile.open(QFile::ReadOnly);
+    QString styleSheet = QString::fromLatin1(styleSheetFile.readAll());
+    qApp->setStyleSheet(styleSheet);
+    styleSheetFile.close();
 }
 
 QtWatchSampleWindow::~QtWatchSampleWindow()
@@ -45,10 +52,8 @@ QtWatchSampleWindow::~QtWatchSampleWindow()
     delete ui;
 
     delete this->mDateTime;
-    this->mDateTime = nullptr;
-
     delete this->mConfigManager;
-    this->mConfigManager = nullptr;
+    delete this->mTimer;
 }
 
 void QtWatchSampleWindow::updateViews()

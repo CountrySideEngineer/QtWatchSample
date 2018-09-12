@@ -27,6 +27,21 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <item row="0" column="0">
      <layout class="QGridLayout" name="gridLayout_2">
       <property name="verticalSpacing">
@@ -71,7 +86,7 @@
        <widget class="QLabel" name="timeLabel">
         <property name="font">
          <font>
-          <pointsize>40</pointsize>
+          <pointsize>14</pointsize>
          </font>
         </property>
         <property name="text">
@@ -118,12 +133,15 @@
        </widget>
       </item>
       <item row="1" column="0" colspan="2">
-       <widget class="QWidget" name="widget" native="true">
+       <widget class="QWidget" name="timeArea" native="true">
         <property name="maximumSize">
          <size>
           <width>16777215</width>
           <height>50</height>
          </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <property name="spacing">
@@ -212,7 +230,7 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="timeDisplayConfigGroup"/>
   <buttongroup name="dateDisplayConfigGroup"/>
+  <buttongroup name="timeDisplayConfigGroup"/>
  </buttongroups>
 </ui>
