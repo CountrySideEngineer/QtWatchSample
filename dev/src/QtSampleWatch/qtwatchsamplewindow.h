@@ -3,6 +3,7 @@
 
 #include <map>
 #include <QMainWindow>
+#include <QTimer>
 #include "model/cdatetime.h"
 #include "cconfigmanager.h"
 using namespace std;
@@ -29,6 +30,7 @@ protected:
 
 
 protected slots:
+    void onTimerDispatch();
     void onDateDisplayConfigGroupClicked(int);
     void onTimeDisplayConfigGroupClicked(int);
 
@@ -40,6 +42,7 @@ private:
 
     map<QString, CConfigManager::DATE_DISPLAY_CONFIG> mDateMap;
     map<QString, CConfigManager::TIME_DISPLAY_CONFIG> mTimeMap;
+    QTimer* mTimer;
 };
 
 #endif // QTWATCHSAMPLEWINDOW_H
