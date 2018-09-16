@@ -55,5 +55,13 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+win32: {
+    DEFINES += PLATFORM_WIN32
+} else: {
+    DEFINES += PLATFORM_NOT_WIN32
+}
+CONFIG += console
+
+
 RESOURCES += \
     resources/resource.qrc
